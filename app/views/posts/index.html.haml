@@ -1,0 +1,11 @@
+%h3 Post
+- @posts.each do |post|
+  .content-form
+    %h5= link_to post.title, post
+    %p= post.content
+    %p= link_to 'Edit', edit_post_path(post)
+    %p= link_to 'destroy', post_path(post), method: :delete
+    %br
+%br
+%h3 Add post
+= link_to 'Add',new_post_path
