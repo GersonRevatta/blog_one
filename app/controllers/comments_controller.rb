@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :find_post, only: [:create, :destroy]
   before_action :find_comment, only: :destroy
+  before_action :authenticate_user!
   def create
     @comment = @post.comments.new(comment_params)
     @post.save ? (redirect_to @post, notice: 'Mensaje exitoso') : (redirect_to @post, notice: 'No se creo mensaje')
