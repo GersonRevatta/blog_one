@@ -1,8 +1,4 @@
-%li
-  = link_to posts_path(my_posts: current_user.id) do
-    %span My Post
-%li
-  = link_to new_post_path do
-    New post
-%li
-  = link_to 'Cerrar Sesión',destroy_user_session_path , method: :delete
+%li= link_to 'My Post', posts_path(my_posts: current_user.id)
+%li= link_to 'New post', new_post_path
+%li= link_to 'Cerrar Sesión',destroy_user_session_path , method: :delete
+%li= link_to current_user.email, user_path(current_user)
