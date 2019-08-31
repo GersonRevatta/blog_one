@@ -1,0 +1,4 @@
+= form_for ([@post, Comment.new]) do |f|
+  = f.text_area :content, rows: 3, placeholder: 'Comment...', required: true
+  %button.btn.btn-lg.btn-primary{:type => "submit"}
+    Enviar

@@ -2,3 +2,7 @@
 .content-post
   %h4= @post.title
   %p= @post.content
+
+%h4  COmments
+= render 'comments/form'
+= render @post.comments
