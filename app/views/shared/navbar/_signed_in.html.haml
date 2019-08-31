@@ -1,0 +1,8 @@
+%li
+  = link_to posts_path do
+    %span Posts
+%li
+  = link_to new_post_path do
+    New post
+%li
+  = link_to 'Cerrar Sesión',destroy_user_session_path , method: :delete
