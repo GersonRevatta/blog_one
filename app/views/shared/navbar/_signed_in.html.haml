@@ -1,6 +1,6 @@
 %li
-  = link_to posts_path do
-    %span Posts
+  = link_to posts_path(my_posts: current_user.id) do
+    %span My Post
 %li
   = link_to new_post_path do
     New post

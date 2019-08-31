@@ -10,4 +10,6 @@
         = link_to 'Blog', root_path, class: 'navbar-brand'
       #navbar.navbar-collapse.navbar-right.collapse
         %ul.nav.navbar-nav
+          %li
+            = link_to 'Posts', posts_path
           = render links_partial_path
