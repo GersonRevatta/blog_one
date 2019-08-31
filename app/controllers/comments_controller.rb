@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   def create
     @comment = @post.comments.new(comment_params)
-    @post.save ? (redirect_to @post, notice: 'Mensaje exitoso') : (redirect_to @post, notice: 'No se creo mensaje')
+    @comment.user = current_user
+    @comment.save ? (redirect_to @post, notice: 'Mensaje exitoso') : (redirect_to @post, notice: 'No se creo mensaje')
   end
 
   def destroy
@@ -12,7 +13,7 @@ class CommentsController < ApplicationController
   end
   private
   def comment_params
-    params.require(:comment).permit(:content, :post_id)
+    params.require(:comment).permit(:content, :post_id, :user_id)
   end
 
   def find_post
