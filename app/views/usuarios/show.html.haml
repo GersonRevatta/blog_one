@@ -1,2 +1,4 @@
 %p this is perfil
 %h3= @user.email
+%h4 Biografia
+%p= best_in_place_if current_user == @user, @user, :biography, :as => :input, place_holder: 'Escribe tu biografia'
